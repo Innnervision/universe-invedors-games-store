@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Universe Invedors — Commercial Game Source Code &amp; Licensing Store</title>
+  <meta name="description" content="Buy sanitized, 100% original Android (Kotlin / Jetpack Compose) and HTML5 game source code, multi-game commercial bundles, and white-label licenses directly from Universe Invedors." />
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --surface: #121826;
+      --surface-2: #192236;
+      --border: #27324a;
+      --text: #f3f6fc;
+      --muted: #9aa7c0;
+      --accent: #3b82f6;
+      --accent-2: #10b981;
+      --gold: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1220px; margin: 0 auto; padding: 0 20px; }
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(11, 15, 25, 0.92);
+      position: sticky; top: 0; z-index: 20; backdrop-filter: blur(10px);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 0; gap: 16px; flex-wrap: wrap;
+    }
+    .brand { font-weight: 800; font-size: 1.15rem; letter-spacing: 0.02em; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 18px; font-size: 0.92rem; color: var(--muted); }
+    .nav-links a:hover { color: var(--text); }
+    .hero {
+      padding: 56px 0 36px;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(circle at top right, rgba(59,130,246,0.14), transparent 45%);
+    }
+    .badge {
+      display: inline-block; padding: 5px 12px; border-radius: 999px;
+      background: rgba(16,185,129,0.14); color: #34d399; font-size: 0.8rem; font-weight: 600;
+      border: 1px solid rgba(16,185,129,0.3); margin-bottom: 14px;
+    }
+    h1 { font-size: clamp(1.9rem, 3.6vw, 2.85rem); line-height: 1.15; margin-bottom: 14px; }
+    .hero p { color: var(--muted); max-width: 780px; font-size: 1.05rem; margin-bottom: 24px; }
+    .featured-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px; margin-top: 16px;
+    }
+    .featured-card {
+      background: linear-gradient(145deg, var(--surface), var(--surface-2));
+      border: 1px solid var(--border); border-radius: 14px; padding: 22px;
+      display: flex; flex-direction: column; justify-content: space-between; gap: 14px;
+    }
+    .featured-card.highlight { border-color: rgba(59,130,246,0.65); }
+    .price-lg { font-size: 1.8rem; font-weight: 800; color: #fff; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 10px 16px; border-radius: 9px; font-weight: 600; font-size: 0.92rem;
+      cursor: pointer; border: 1px solid transparent; transition: 0.15s ease;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #2563eb; }
+    .btn-green { background: var(--accent-2); color: #052e16; font-weight: 700; }
+    .btn-green:hover { background: #059669; color: #fff; }
+    .btn-outline { border-color: var(--border); background: var(--surface-2); color: var(--text); }
+    .btn-outline:hover { border-color: var(--accent); }
+    .controls {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; flex-wrap: wrap; padding: 30px 0 18px;
+    }
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; }
+    .filter-btn {
+      background: var(--surface); border: 1px solid var(--border); color: var(--muted);
+      padding: 7px 14px; border-radius: 999px; cursor: pointer; font-size: 0.86rem; font-weight: 600;
+    }
+    .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .search-input {
+      background: var(--surface); border: 1px solid var(--border); color: var(--text);
+      padding: 9px 14px; border-radius: 9px; min-width: 240px; font-size: 0.92rem;
+    }
+    .catalog-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 20px; padding-bottom: 48px;
+    }
+    .card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+      overflow: hidden; display: flex; flex-direction: column;
+    }
+    .card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; background: #090d16; }
+    .card-body { padding: 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .meta { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--muted); }
+    .card h3 { font-size: 1.08rem; line-height: 1.3; }
+    .card p { font-size: 0.88rem; color: var(--muted); flex: 1; }
+    .card-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+    .info-section {
+      border-top: 1px solid var(--border); padding: 40px 0;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px;
+    }
+    .info-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+    .info-box h3 { margin-bottom: 8px; font-size: 1.02rem; }
+    .info-box p, .info-box li { color: var(--muted); font-size: 0.9rem; }
+    .info-box ul { padding-left: 18px; display: grid; gap: 6px; margin-top: 6px; }
+    footer {
+      border-top: 1px solid var(--border); padding: 26px 0; color: var(--muted);
+      font-size: 0.86rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">UNIVERSE <span>INVEDORS</span> · Game Store</div>
+      <nav class="nav-links">
+        <a href="#bundles">Bundles</a>
+        <a href="#catalog">24 Games</a>
+        <a href="#licensing">Licensing &amp; Delivery</a>
+        <a href="https://universeinvedors.tech/" target="_blank" rel="noopener">Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="bundles">
+    <div class="container">
+      <div class="badge">Direct Commercial Storefront · D-U-N-S Verified Studio (310915492)</div>
+      <h1>Production-Ready Android &amp; HTML5 Game Source Code</h1>
+      <p>
+        24 clean, 100% original games built with Kotlin / Jetpack Compose and Web + Android Capacitor.
+        Every package is sanitized (no private keystores or credentials) and ready for commercial publishing, reskinning, or white-label deployment.
+      </p>
+
+      <div class="featured-grid">
+        <div class="featured-card highlight">
+          <div>
+            <div class="meta"><span>BEST VALUE · 15 GAMES</span><span>344.86 MB ZIP</span></div>
+            <h2 style="margin:6px 0;">15-Game Android Commercial Bundle</h2>
+            <p style="font-size:0.9rem;color:var(--muted);margin:0;">
+              Includes 8 Ball Pool Legends, 29 Cards: Elite Edition, Ludo Grand Luxe, Z State Survival, Football Champions, Block Kingdom, Snake Odyssey, and 8 more original titles.
+            </p>
+          </div>
+          <div>
+            <div class="price-lg" style="margin-bottom:10px;">$149 <span style="font-size:0.9rem;color:var(--muted);font-weight:500;">USD · Commercial Bundle</span></div>
+            <a class="btn btn-green" style="width:100%;" target="_blank" rel="noopener"
+               href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=souravmukherjee7991%40gmail.com&item_name=Universe+Invedors+15-Game+Android+Commercial+Bundle&amount=149.00&currency_code=USD">
+              Buy Bundle via PayPal ($149)
+            </a>
+          </div>
+        </div>
+
+        <div class="featured-card">
+          <div>
+            <div class="meta"><span>HTML5 PLAYABLE</span><span>14.89 MB ZIP</span></div>
+            <h2 style="margin:6px 0;">8 Ball Pool Legends (Web Build)</h2>
+            <p style="font-size:0.9rem;color:var(--muted);margin:0;">
+              Ready-to-host HTML5 playable build for web portals, browsers, and mobile WebViews.
+            </p>
+          </div>
+          <div>
+            <div class="price-lg" style="margin-bottom:10px;">$4.99 <span style="font-size:0.9rem;color:var(--muted);font-weight:500;">USD · Playable Build</span></div>
+            <a class="btn btn-primary" style="width:100%;" target="_blank" rel="noopener"
+               href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=souravmukherjee7991%40gmail.com&item_name=8+Ball+Pool+Legends+HTML5+Playable+Build&amount=4.99&currency_code=USD">
+              Buy HTML5 Build ($4.99)
+            </a>
+          </div>
+        </div>
+
+        <div class="featured-card">
+          <div>
+            <div class="meta"><span>B2B &amp; ACQUISITION</span><span>CUSTOM TERMS</span></div>
+            <h2 style="margin:6px 0;">White-Label &amp; Exclusive IP Sales</h2>
+            <p style="font-size:0.9rem;color:var(--muted);margin:0;">
+              Need custom branding, AdMob/IAP integration, or full exclusive acquisition of any original title? Request a direct commercial agreement.
+            </p>
+          </div>
+          <div>
+            <div class="price-lg" style="margin-bottom:10px;">$499+ <span style="font-size:0.9rem;color:var(--muted);font-weight:500;">USD · Negotiated</span></div>
+            <a class="btn btn-outline" style="width:100%;"
+               href="mailto:universeinvedors@gmail.com,souravmukherjee7991@gmail.com?subject=Commercial%20Licensing%20%2F%20Acquisition%20Inquiry%20-%20Universe%20Invedors">
+              Request Commercial Quote
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container" id="catalog">
+    <div class="controls">
+      <div class="filters" id="filters">
+        <button class="filter-btn active" data-cat="all">All 24 Games</button>
+        <button class="filter-btn" data-cat="card">Card &amp; Board</button>
+        <button class="filter-btn" data-cat="sports">Sports</button>
+        <button class="filter-btn" data-cat="action">Action &amp; Strategy</button>
+        <button class="filter-btn" data-cat="casual">Casual &amp; Puzzle</button>
+      </div>
+      <input id="search" class="search-input" type="search" placeholder="Search games (e.g. Pool, Rummy, Survival)..." />
+    </div>
+
+    <div class="catalog-grid" id="grid"></div>
+  </main>
+
+  <section class="container info-section" id="licensing">
+    <div class="info-box">
+      <h3>Single vs. Extended License</h3>
+      <ul>
+        <li><strong>Single Commercial License ($19–$39):</strong> Build, customize, and publish 1 commercial app/game on Google Play, Amazon Appstore, or web under your own studio account.</li>
+        <li><strong>Extended Commercial License ($99–$199):</strong> Unlimited commercial deployments, client work, and white-label reskins without resale of raw source code.</li>
+      </ul>
+    </div>
+    <div class="info-box">
+      <h3>Checkout &amp; Fast Delivery</h3>
+      <ul>
+        <li>Click any <strong>Single</strong> or <strong>Extended</strong> PayPal button to pay securely to <strong>souravmukherjee7991@gmail.com</strong>.</li>
+        <li>Forward your PayPal Transaction ID to <strong>universeinvedors@gmail.com</strong> (or <strong>souravmukherjee7991@gmail.com</strong>) to receive your private download link and signed commercial license receipt.</li>
+      </ul>
+    </div>
+    <div class="info-box">
+      <h3>Verified Studio Ownership</h3>
+      <p>
+        <strong>UNIVERSE INVEDORS</strong> · D&amp;B D-U-N-S: <strong>310915492</strong><br />
+        Kolkata, West Bengal, India<br />
+        Contact: <a href="mailto:universeinvedors@gmail.com" style="color:var(--accent);">universeinvedors@gmail.com</a>
+      </p>
+    </div>
+  </section>
+
+  <footer class="container">
+    <span>© 2026 Universe Invedors. All 24 listed titles are original studio creations.</span>
+    <span>Payments processed via PayPal (souravmukherjee7991@gmail.com)</span>
+  </footer>
+
+  <script>
+    const PAYPAL_EMAIL = "souravmukherjee7991@gmail.com";
+    const GAMES = [
+      { id: 1, title: "8 Ball Pool Legends", cat: "sports", stack: "Web + Android Capacitor", size: "57.09 MB", single: 29, ext: 199, cover: "01-8-ball-pool-legends-cover-1280x720.jpg", desc: "Billiards & 8-ball pool game built with modern web tech + Capacitor Android wrapper." },
+      { id: 2, title: "29 Cards: Elite Edition", cat: "card", stack: "Kotlin / Jetpack Compose", size: "21.14 MB", single: 29, ext: 199, cover: "02-29-cards-elite-edition-cover-1280x720.jpg", desc: "Classic South Asian 29 trick-taking card game with AI partners and offline play." },
+      { id: 3, title: "Ludo Grand Luxe", cat: "card", stack: "Kotlin / Jetpack Compose", size: "31.51 MB", single: 29, ext: 179, cover: "03-ludo-grand-luxe-cover-1280x720.jpg", desc: "Polished 4-player Ludo board game with local multiplayer and smart bots." },
+      { id: 4, title: "Football Champions", cat: "sports", stack: "Kotlin / Jetpack Compose", size: "14.74 MB", single: 29, ext: 149, cover: "04-football-champions-cover-1280x720.jpg", desc: "Fast-paced arcade football action built natively in Jetpack Compose." },
+      { id: 5, title: "Z State Survival", cat: "action", stack: "Kotlin / Jetpack Compose", size: "6.65 MB", single: 39, ext: 149, cover: "05-z-state-survival-cover-1280x720.jpg", desc: "Post-apocalyptic zombie survival & base defense strategy game." },
+      { id: 6, title: "Block Kingdom: Puzzle RPG", cat: "casual", stack: "Kotlin / Jetpack Compose", size: "19.94 MB", single: 24, ext: 129, cover: "06-block-kingdom-cover-1280x720.jpg", desc: "Block-matching puzzle RPG with progression, combos, and fantasy themes." },
+      { id: 7, title: "Snake Odyssey: Classic Reborn", cat: "casual", stack: "Kotlin / Jetpack Compose", size: "8.47 MB", single: 19, ext: 99, cover: "07-snake-odyssey-cover-1280x720.jpg", desc: "Modernized neon arcade snake experience with smooth touch controls." },
+      { id: 8, title: "Last Dawn", cat: "action", stack: "Kotlin / Jetpack Compose", size: "32.66 MB", single: 29, ext: 149, cover: "08-last-dawn-cover-1280x720.jpg", desc: "Action survival shooter with wave combat and native Android performance." },
+      { id: 9, title: "Vanguard: Sovereign Conquest", cat: "action", stack: "Kotlin / Jetpack Compose", size: "8.99 MB", single: 29, ext: 149, cover: "09-vanguard-sovereign-conquest-cover-1280x720.jpg", desc: "Tactical conquest and kingdom strategy game built in Kotlin." },
+      { id: 10, title: "Titan Boxing Championship", cat: "sports", stack: "Kotlin / Jetpack Compose", size: "12.53 MB", single: 24, ext: 129, cover: "10-titan-boxing-championship-cover-1280x720.jpg", desc: "Arcade ring boxing with combo timing, dodges, and championship bouts." },
+      { id: 11, title: "Crazy Restaurant", cat: "casual", stack: "Kotlin / Jetpack Compose", size: "25.70 MB", single: 24, ext: 129, cover: "11-crazy-restaurant-cover-1280x720.jpg", desc: "Time-management cooking and restaurant service simulation game." },
+      { id: 12, title: "Magic Pet Rescue", cat: "casual", stack: "Kotlin / Jetpack Compose", size: "15.97 MB", single: 19, ext: 99, cover: "12-magic-pet-rescue-cover-1280x720.jpg", desc: "Family-friendly pet care and rescue adventure in Jetpack Compose." },
+      { id: 13, title: "Apex Strike AI", cat: "action", stack: "Kotlin / Jetpack Compose", size: "16.35 MB", single: 24, ext: 129, cover: "13-apex-strike-ai-cover-1280x720.jpg", desc: "Futuristic sci-fi combat and tactical strike game." },
+      { id: 14, title: "Indian Rummy Pro", cat: "card", stack: "Kotlin / Jetpack Compose", size: "18.61 MB", single: 29, ext: 149, cover: "14-indian-rummy-cover-1280x720.jpg", desc: "13-card Indian Rummy with meld validation and offline AI tables." },
+      { id: 15, title: "Modern Carrom Strike", cat: "card", stack: "Kotlin / Jetpack Compose", size: "11.26 MB", single: 24, ext: 129, cover: "15-modern-carrom-strike-cover-1280x720.jpg", desc: "Physics-based tabletop carrom disc pool game for Android." },
+      { id: 16, title: "Cricket Rush", cat: "sports", stack: "Kotlin / Jetpack Compose", size: "15.04 MB", single: 24, ext: 129, cover: "16-cricket-rush-cover-1280x720.jpg", desc: "Quick-fire cricket batting & bowling arcade game." },
+      { id: 17, title: "Super Football: Goal Master", cat: "sports", stack: "Kotlin / Jetpack Compose", size: "11.00 MB", single: 24, ext: 129, cover: "17-super-football-goal-master-cover-1280x720.jpg", desc: "Penalty shootout and free-kick football challenge." },
+      { id: 18, title: "Jelly Hop", cat: "casual", stack: "Kotlin / Jetpack Compose", size: "15.31 MB", single: 19, ext: 99, cover: "18-jelly-hop-cover-1280x720.jpg", desc: "Hyper-casual vertical platform hopper with colorful physics." },
+      { id: 19, title: "Little Monster Lab", cat: "casual", stack: "Kotlin / Jetpack Compose", size: "2.37 MB", single: 19, ext: 99, cover: "19-little-monster-lab-cover-1280x720.jpg", desc: "Lightweight casual monster-mixing and lab puzzle game." },
+      { id: 20, title: "Magnet Rush", cat: "casual", stack: "Kotlin / Jetpack Compose", size: "25.76 MB", single: 19, ext: 99, cover: "20-magnet-rush-cover-1280x720.jpg", desc: "Fast polarity-switching arcade runner with coin collection." },
+      { id: 21, title: "Unicorn Magic World", cat: "casual", stack: "Kotlin / Jetpack Compose", size: "7.84 MB", single: 19, ext: 99, cover: "21-unicorn-magic-world-cover-1280x720.jpg", desc: "Fantasy runner and magical world adventure." },
+      { id: 22, title: "Toy Box World", cat: "casual", stack: "Kotlin / Jetpack Compose", size: "7.90 MB", single: 24, ext: 129, cover: "22-toy-box-world-cover-1280x720.jpg", desc: "3D-styled toy sandbox & mini-game collection." },
+      { id: 23, title: "Universe Invaders", cat: "action", stack: "Kotlin / Jetpack Compose", size: "15.30 MB", single: 19, ext: 99, cover: "23-universe-invaders-cover-1280x720.jpg", desc: "Retro-modern space arcade shooter with boss waves." },
+      { id: 24, title: "Apex Vanguard", cat: "action", stack: "Kotlin / Jetpack Compose", size: "14.27 MB", single: 24, ext: 129, cover: "24-apex-vanguard-cover-1280x720.jpg", desc: "Squad action combat game built in Kotlin & Jetpack Compose." }
+    ];
+
+    function paypalUrl(itemName, price) {
+      const params = new URLSearchParams({
+        cmd: "_xclick",
+        business: PAYPAL_EMAIL,
+        item_name: itemName,
+        amount: price.toFixed(2),
+        currency_code: "USD"
+      });
+      return `https://www.paypal.com/cgi-bin/webscr?${params.toString()}`;
+    }
+
+    let currentCat = "all";
+    const grid = document.getElementById("grid");
+    const search = document.getElementById("search");
+
+    function render() {
+      const q = search.value.trim().toLowerCase();
+      const filtered = GAMES.filter(g => (currentCat === "all" || g.cat === currentCat) && (!q || g.title.toLowerCase().includes(q) || g.desc.toLowerCase().includes(q)));
+      grid.innerHTML = filtered.map(g => `
+        <article class="card">
+          <img src="assets/covers/${g.cover}" alt="${g.title}" loading="lazy" />
+          <div class="card-body">
+            <div class="meta"><span>${g.stack}</span><span>${g.size}</span></div>
+            <h3>${g.title}</h3>
+            <p>${g.desc}</p>
+            <div class="card-actions">
+              <a class="btn btn-primary" target="_blank" rel="noopener" href="${paypalUrl(g.title + ' - Single Commercial License', g.single)}">Single $${g.single}</a>
+              <a class="btn btn-outline" target="_blank" rel="noopener" href="${paypalUrl(g.title + ' - Extended Commercial License', g.ext)}">Extended $${g.ext}</a>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    document.getElementById("filters").addEventListener("click", (e) => {
+      if (!e.target.matches(".filter-btn")) return;
+      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      e.target.classList.add("active");
+      currentCat = e.target.dataset.cat;
+      render();
+    });
+    search.addEventListener("input", render);
+    render();
+  </script>
+</body>
+</html>
