@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://innnervision.github.io/universe-invedors-games-store/sitemap.xml
