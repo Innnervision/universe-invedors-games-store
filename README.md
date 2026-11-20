@@ -6,7 +6,7 @@ UNIVERSE INVEDORS (D&B D-U-N-S: `310915492`) offers **24 clean, 100% original co
 
 ## Featured Commercial Packages
 
-- **15-Game Android Commercial Source Bundle** — **$149 USD** (`344.86 MB` sanitized ZIP)
+- **10-Game Android Commercial Source Bundle** — **$99 USD** (`178.94 MB` sanitized ZIP)
 - **8 Ball Pool Legends (HTML5 Playable Web Build)** — **$4.99 USD** (`14.89 MB` ZIP)
 - **Single Commercial Licenses** — **$19 – $39 USD** per title
 - **Extended Commercial / White-Label Licenses** — **$99 – $199 USD** per title
