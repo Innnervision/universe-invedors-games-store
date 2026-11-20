@@ -235,8 +235,9 @@
         <a href="privacy.html">Privacy &amp; Refunds</a>
         <a href="demo/8-ball-pool/" target="_blank" rel="noopener" style="color:#34d399;font-weight:700;">▶ Play Live HTML5 Demo</a>
         <a href="#enterprise">White-Label &amp; AI Services</a>
-        <a href="https://innnervision.github.io/" target="_blank" rel="noopener">31-App Google Play Hub</a>
-        <a href="https://universeinvedors.tech/" target="_blank" rel="noopener">Corporate Site</a>
+        <a href="https://universeinvedors.tech/games-store" target="_blank" rel="noopener">Android Games (.tech)</a>
+        <a href="https://universeinvedors.info/" target="_blank" rel="noopener">All Apps (.info)</a>
+        <a href="https://universeinvedors.tech/" target="_blank" rel="noopener">Corporate Site (.tech)</a>
       </nav>
     </div>
   </header>
@@ -514,7 +515,7 @@
       5: { play: "https://play.google.com/store/apps/details?id=com.universeinvedors.zstatesurvival", seo: "https://innnervision.github.io/apps/z-state-survival.html" },
       6: { play: "https://play.google.com/store/apps/details?id=com.universeinvedors.block.kingdom", seo: "https://innnervision.github.io/apps/block-kingdom.html" },
       7: { play: "https://play.google.com/store/apps/details?id=com.universeinvedors.snakeodyssey", seo: "https://innnervision.github.io/apps/snake-odyssey.html", demo: "https://innnervision.github.io/Snake-Game/" },
-      8: { play: "https://play.google.com/store/apps/details?id=com.universeinvedors.zstatesurvival", seo: "https://innnervision.github.io/apps/z-state-survival.html" },
+      8: { play: "https://play.google.com/store/apps/details?id=com.universeinvedors.lastdawn", seo: "https://innnervision.github.io/apps/z-state-survival.html" },
       9: { play: "https://play.google.com/store/apps/details?id=com.universeinvedors.vanguardsovcq", seo: "https://innnervision.github.io/apps/vanguard-sovereign-conquest.html" },
       10: { play: "https://play.google.com/store/apps/details?id=com.universeinvedors.titanboxing", seo: "https://innnervision.github.io/apps/titan-boxing-championship.html" },
       11: { play: "https://play.google.com/store/apps/details?id=com.universeinvedors.crazyrestaurant", seo: "https://innnervision.github.io/apps/crazy-restaurant.html" },
@@ -530,7 +531,7 @@
       21: { play: "https://play.google.com/store/apps/details?id=com.universeinvedors.unicornmagic", seo: "https://innnervision.github.io/apps/unicorn-magic-world.html" },
       22: { play: "https://play.google.com/store/apps/dev?id=7748145387206321205", seo: "https://innnervision.github.io/" },
       23: { play: "https://play.google.com/store/apps/details?id=com.universeinvedors.universeinvaders", seo: "https://innnervision.github.io/apps/universe-invaders.html" },
-      24: { play: "https://play.google.com/store/apps/details?id=com.universeinvedors.apexstrikeai", seo: "https://innnervision.github.io/apps/apex-strike-ai-fps.html" },
+      24: { play: "https://play.google.com/store/apps/details?id=com.universeinvedors.apexvanguard", seo: "https://innnervision.github.io/apps/apex-strike-ai-fps.html" },
     };
 
     const GAMES = [
@@ -596,12 +597,15 @@
             <h3>${g.title}</h3>
             <p>${g.desc}</p>
             <div class="provides">${g.provides}</div>
-            <div class="card-actions">
+            <div class="card-actions" style="grid-template-columns:1fr;">
+              <a class="btn btn-green" target="_blank" rel="noopener" href="${LIVE_LINKS[g.id]?.play || 'https://play.google.com/store/apps/dev?id=7748145387206321205'}">▶ Get on Google Play Store</a>
+            </div>
+            <div class="card-actions" style="margin-top:6px;">
               <a class="btn btn-primary" target="_blank" rel="noopener" href="${paypalUrl(g.title + ' - Single Commercial License', g.single)}">Single $${g.single}</a>
               <a class="btn btn-outline" target="_blank" rel="noopener" href="${paypalUrl(g.title + ' - Extended Commercial License', g.ext)}">Extended $${g.ext}</a>
             </div>
             <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px;padding-top:8px;border-top:1px solid rgba(39,52,78,0.6);font-size:0.78rem;">
-              <a href="${LIVE_LINKS[g.id]?.play || 'https://play.google.com/store/apps/dev?id=7748145387206321205'}" target="_blank" rel="noopener" style="color:#60a5fa;">✓ Verified Play Store App</a>
+              <a href="https://universeinvedors.tech/games-store" target="_blank" rel="noopener" style="color:#60a5fa;">Android Storefront (.tech)</a>
               ${LIVE_LINKS[g.id]?.demo ? `<a href="${LIVE_LINKS[g.id].demo}" target="_blank" rel="noopener" style="color:#34d399;font-weight:700;">▶ Live Web Demo</a>` : `<a href="mailto:universeinvedors@gmail.com?subject=Pro-Forma%20Invoice%20Request%3A%20${encodeURIComponent(g.title)}" style="color:#9aa7c0;">Request Invoice</a>`}
             </div>
           </div>
