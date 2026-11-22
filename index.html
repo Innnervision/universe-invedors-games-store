@@ -4,12 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Universe Invedors — Commercial Game Source Code &amp; Licensing Store</title>
-  <meta name="description" content="Buy sanitized, 100% original Android (Kotlin / Jetpack Compose) and HTML5 game source code, multi-game commercial bundles, and white-label licenses directly from Universe Invedors." />
+  <meta name="description" content="Buy sanitized, 100% original Android (Kotlin / Jetpack Compose) and HTML5 game source code, multi-game commercial bundles, and custom white-label services across all budgets from Universe Invedors." />
+  <meta name="theme-color" content="#080c16" />
   <meta property="og:title" content="Universe Invedors — 24 Original Android &amp; HTML5 Games (Commercial Source)" />
-  <meta property="og:description" content="Production-ready Kotlin/Jetpack Compose &amp; Web+Capacitor game source code, 10-game bundle ($99), and HTML5 playable builds." />
+  <meta property="og:description" content="Production-ready Kotlin/Jetpack Compose &amp; Web+Capacitor game source code, 10-game bundle ($99), HTML5 playable builds, and flexible custom projects across all budgets." />
+  <meta property="og:url" content="https://innnervision.github.io/universe-invedors-games-store/" />
+  <meta property="og:site_name" content="Universe Invedors" />
   <meta property="og:image" content="https://innnervision.github.io/universe-invedors-games-store/assets/showcase/hero-bundle-banner.jpg" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Universe Invedors — 24 Original Android &amp; HTML5 Games (Commercial Source)" />
+  <meta name="twitter:description" content="Sanitized Kotlin/Jetpack Compose &amp; HTML5 game source code, 10-game bundle, and flexible white-label builds for all budgets." />
+  <meta name="twitter:image" content="https://innnervision.github.io/universe-invedors-games-store/assets/showcase/hero-bundle-banner.jpg" />
   <link rel="canonical" href="https://innnervision.github.io/universe-invedors-games-store/" />
   <script type="application/ld+json">
   {
@@ -80,6 +86,14 @@
       line-height: 1.55;
     }
     a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible, input:focus-visible, .shot-card:focus-visible {
+      outline: 2px solid var(--accent); outline-offset: 2px;
+    }
+    .skip-link {
+      position: absolute; left: -9999px; top: 8px; z-index: 100;
+      background: var(--accent); color: #fff; padding: 10px 16px; border-radius: 8px; font-weight: 700;
+    }
+    .skip-link:focus { left: 16px; }
     .container { max-width: 1240px; margin: 0 auto; padding: 0 20px; }
     header {
       border-bottom: 1px solid var(--border);
@@ -179,8 +193,31 @@
       padding: 9px 14px; border-radius: 9px; min-width: 240px; font-size: 0.92rem;
     }
     .catalog-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 20px; padding-bottom: 48px;
+    }
+    .flexible-cta-banner {
+      background: linear-gradient(135deg, rgba(16,185,129,0.14), rgba(59,130,246,0.14));
+      border: 1px solid rgba(52,211,153,0.4);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .flexible-cta-copy { max-width: 680px; }
+    .flexible-cta-copy h3 { font-size: 1.15rem; color: #fff; margin-bottom: 6px; }
+    .flexible-cta-copy p { font-size: 0.92rem; color: #cbd5e1; margin: 0; }
+    .flexible-cta-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    @media (max-width: 600px) {
+      .nav { padding: 12px 0; gap: 10px; }
+      .nav-links { gap: 10px 14px; font-size: 0.85rem; }
+      .search-input { width: 100%; min-width: 0; }
+      .flexible-cta-banner { padding: 18px; }
+      .flexible-cta-actions, .flexible-cta-actions .btn { width: 100%; }
     }
     .card {
       background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
@@ -224,17 +261,18 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#catalog">Skip to 24-Game Catalog</a>
   <header>
     <div class="container nav">
       <div class="brand">UNIVERSE <span>INVEDORS</span> · Game Store</div>
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="Primary navigation">
         <a href="#bundles">Bundles</a>
         <a href="#showcase">Visual Showcase</a>
         <a href="#catalog">24 Games</a>
         <a href="license.html">License Terms</a>
         <a href="privacy.html">Privacy &amp; Refunds</a>
         <a href="demo/8-ball-pool/" target="_blank" rel="noopener" style="color:#34d399;font-weight:700;">▶ Play Live HTML5 Demo</a>
-        <a href="#enterprise">White-Label &amp; AI Services</a>
+        <a href="https://universeinvedors.tech/white-label" target="_blank" rel="noopener" style="color:#60a5fa;font-weight:600;">White-Label &amp; Custom Builds</a>
         <a href="https://universeinvedors.tech/games-store" target="_blank" rel="noopener">Android Games (.tech)</a>
         <a href="https://universeinvedors.info/" target="_blank" rel="noopener">All Apps (.info)</a>
         <a href="https://universeinvedors.tech/" target="_blank" rel="noopener">Corporate Site (.tech)</a>
@@ -258,8 +296,12 @@
               Get 10-Game Bundle ($99)
             </a>
             <a class="btn btn-primary" href="demo/8-ball-pool/" target="_blank" rel="noopener">▶ Play 8-Ball Pool HTML5 Live Demo</a>
-            <a class="btn btn-outline" href="#enterprise">White-Label &amp; B2B Quotes</a>
+            <a class="btn btn-outline" href="https://universeinvedors.tech/white-label" target="_blank" rel="noopener">White-Label &amp; Custom Projects</a>
+            <a class="btn btn-outline" href="mailto:rajmukherjee042@gmail.com?subject=Custom%20Project%20Inquiry%20-%20Universe%20Invedors">Free to Talk — Email Us</a>
           </div>
+          <p style="font-size:0.86rem;color:#cbd5e1;margin-top:12px;margin-bottom:0;">
+            💬 <strong>Free to talk</strong> — we welcome custom projects across all budgets, from small starter builds to enterprise systems.
+          </p>
         </div>
         <div class="hero-img-wrap">
           <img src="assets/showcase/hero-bundle-banner.jpg" alt="Universe Invedors Commercial Game Studio Bundle Showcase" />
@@ -346,6 +388,16 @@
       <h2>High-Impact B2B White-Label, Full-Catalog &amp; AI Engineering Packages</h2>
       <p>Turnkey commercial deliverables backed by 31 live Google Play products, verified D-U-N-S registration (310915492), and milestone-protected execution.</p>
     </div>
+    <div class="flexible-cta-banner" role="region" aria-label="Custom projects across all budgets">
+      <div class="flexible-cta-copy">
+        <h3>Have a Custom Idea or Specific Budget? Let&apos;s Talk — No Obligation.</h3>
+        <p>Free to talk — we welcome custom projects across all budgets, from small starter builds to enterprise systems. Whether you need a quick reskin, a custom indie MVP, or a full-scale white-label platform, we&apos;ll scope a clean plan together.</p>
+      </div>
+      <div class="flexible-cta-actions">
+        <a class="btn btn-green" href="https://universeinvedors.tech/white-label" target="_blank" rel="noopener">Explore White-Label Services →</a>
+        <a class="btn btn-outline" href="mailto:rajmukherjee042@gmail.com?subject=Custom%20Project%20Inquiry%20-%20Universe%20Invedors">Email rajmukherjee042@gmail.com</a>
+      </div>
+    </div>
     <div class="featured-grid" style="margin-bottom:24px;">
       <div class="featured-card">
         <div>
@@ -423,27 +475,27 @@
       <p>Click any image to inspect full-size visuals. Every project delivers clean source code, gameplay mechanics, and store-ready graphics.</p>
     </div>
     <div class="showcase-grid">
-      <div class="shot-card" onclick="openModal('assets/showcase/pool-gameplay-1.jpg', '8 Ball Pool Legends — Physics Billiards &amp; Cue Aiming')">
+      <div class="shot-card" role="button" tabindex="0" onclick="openModal('assets/showcase/pool-gameplay-1.jpg', '8 Ball Pool Legends — Physics Billiards &amp; Cue Aiming')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('assets/showcase/pool-gameplay-1.jpg', '8 Ball Pool Legends — Physics Billiards &amp; Cue Aiming');}">
         <img src="assets/showcase/pool-gameplay-1.jpg" alt="8 Ball Pool Legends Gameplay 1" loading="lazy" />
         <div class="shot-caption"><strong>8 Ball Pool Legends</strong><span>2D/3D Physics Engine • Web + Android Capacitor</span></div>
       </div>
-      <div class="shot-card" onclick="openModal('assets/showcase/z-state-survival-screen.png', 'Z State Survival — Base Defense &amp; Survival Strategy')">
+      <div class="shot-card" role="button" tabindex="0" onclick="openModal('assets/showcase/z-state-survival-screen.png', 'Z State Survival — Base Defense &amp; Survival Strategy')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('assets/showcase/z-state-survival-screen.png', 'Z State Survival — Base Defense &amp; Survival Strategy');}">
         <img src="assets/showcase/z-state-survival-screen.png" alt="Z State Survival Screen" loading="lazy" />
         <div class="shot-caption"><strong>Z State Survival</strong><span>Resource Loop • Strategy Combat • Jetpack Compose</span></div>
       </div>
-      <div class="shot-card" onclick="openModal('assets/showcase/ludo-grand-luxe-screen.png', 'Ludo Grand Luxe — Classic 4-Player Board &amp; AI Bots')">
+      <div class="shot-card" role="button" tabindex="0" onclick="openModal('assets/showcase/ludo-grand-luxe-screen.png', 'Ludo Grand Luxe — Classic 4-Player Board &amp; AI Bots')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('assets/showcase/ludo-grand-luxe-screen.png', 'Ludo Grand Luxe — Classic 4-Player Board &amp; AI Bots');}">
         <img src="assets/showcase/ludo-grand-luxe-screen.png" alt="Ludo Grand Luxe Screen" loading="lazy" />
         <div class="shot-caption"><strong>Ludo Grand Luxe</strong><span>Local Multiplayer • Smart AI • AdMob Hooks</span></div>
       </div>
-      <div class="shot-card" onclick="openModal('assets/showcase/29-cards_-elite-edition-screen.png', '29 Cards: Elite Edition — Trick-Taking Card Engine')">
+      <div class="shot-card" role="button" tabindex="0" onclick="openModal('assets/showcase/29-cards_-elite-edition-screen.png', '29 Cards: Elite Edition — Trick-Taking Card Engine')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('assets/showcase/29-cards_-elite-edition-screen.png', '29 Cards: Elite Edition — Trick-Taking Card Engine');}">
         <img src="assets/showcase/29-cards_-elite-edition-screen.png" alt="29 Cards Elite Edition Screen" loading="lazy" />
         <div class="shot-caption"><strong>29 Cards: Elite Edition</strong><span>Bidding &amp; Trump Rules • Offline AI Partners</span></div>
       </div>
-      <div class="shot-card" onclick="openModal('assets/showcase/block-kingdom-screen.jpg', 'Block Kingdom: Puzzle RPG — Combo Grid &amp; Progression')">
+      <div class="shot-card" role="button" tabindex="0" onclick="openModal('assets/showcase/block-kingdom-screen.jpg', 'Block Kingdom: Puzzle RPG — Combo Grid &amp; Progression')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('assets/showcase/block-kingdom-screen.jpg', 'Block Kingdom: Puzzle RPG — Combo Grid &amp; Progression');}">
         <img src="assets/showcase/block-kingdom-screen.jpg" alt="Block Kingdom Screen" loading="lazy" />
         <div class="shot-caption"><strong>Block Kingdom: Puzzle RPG</strong><span>Grid Puzzle + RPG Progression • Kotlin</span></div>
       </div>
-      <div class="shot-card" onclick="openModal('assets/showcase/pet-rescue-1.jpg', 'Magic Pet Rescue — Family-Friendly 3D Styled Adventure')">
+      <div class="shot-card" role="button" tabindex="0" onclick="openModal('assets/showcase/pet-rescue-1.jpg', 'Magic Pet Rescue — Family-Friendly 3D Styled Adventure')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('assets/showcase/pet-rescue-1.jpg', 'Magic Pet Rescue — Family-Friendly 3D Styled Adventure');}">
         <img src="assets/showcase/pet-rescue-1.jpg" alt="Magic Pet Rescue Showcase" loading="lazy" />
         <div class="shot-caption"><strong>Magic Pet Rescue</strong><span>Casual Progression • Clean Families-Safe Design</span></div>
       </div>
@@ -452,14 +504,14 @@
 
   <main class="container" id="catalog">
     <div class="controls">
-      <div class="filters" id="filters">
-        <button class="filter-btn active" data-cat="all">All 24 Games</button>
-        <button class="filter-btn" data-cat="card">Card &amp; Board</button>
-        <button class="filter-btn" data-cat="sports">Sports</button>
-        <button class="filter-btn" data-cat="action">Action &amp; Strategy</button>
-        <button class="filter-btn" data-cat="casual">Casual &amp; Puzzle</button>
+      <div class="filters" id="filters" role="group" aria-label="Filter games by category">
+        <button class="filter-btn active" type="button" data-cat="all" aria-pressed="true">All 24 Games</button>
+        <button class="filter-btn" type="button" data-cat="card" aria-pressed="false">Card &amp; Board</button>
+        <button class="filter-btn" type="button" data-cat="sports" aria-pressed="false">Sports</button>
+        <button class="filter-btn" type="button" data-cat="action" aria-pressed="false">Action &amp; Strategy</button>
+        <button class="filter-btn" type="button" data-cat="casual" aria-pressed="false">Casual &amp; Puzzle</button>
       </div>
-      <input id="search" class="search-input" type="search" placeholder="Search games (e.g. Pool, Rummy, Survival)..." />
+      <input id="search" class="search-input" type="search" aria-label="Search games catalog" placeholder="Search games (e.g. Pool, Rummy, Survival)..." />
     </div>
 
     <div class="catalog-grid" id="grid"></div>
@@ -481,26 +533,27 @@
       </ul>
     </div>
     <div class="info-box">
-      <h3>Verified Studio Ownership</h3>
+      <h3>Verified Studio Ownership &amp; Custom Builds</h3>
       <p>
         <strong>UNIVERSE INVEDORS</strong> · D&amp;B D-U-N-S: <strong>310915492</strong><br />
         Kolkata, West Bengal, India<br />
-        Contact: <a href="mailto:universeinvedors@gmail.com" style="color:var(--accent);">universeinvedors@gmail.com</a>
+        Store Support: <a href="mailto:universeinvedors@gmail.com" style="color:var(--accent);">universeinvedors@gmail.com</a><br />
+        Custom Projects (All Budgets): <a href="mailto:rajmukherjee042@gmail.com" style="color:#34d399;">rajmukherjee042@gmail.com</a> · <a href="https://universeinvedors.tech/white-label" target="_blank" rel="noopener" style="color:var(--accent);">White-Label Services ↗</a>
       </p>
     </div>
   </section>
 
   <footer class="container">
     <span>© 2026 Universe Invedors. All 24 listed titles are original studio creations.</span>
-    <span>Payments processed via PayPal (souravmukherjee7991@gmail.com)</span>
+    <span><a href="https://universeinvedors.tech/white-label" target="_blank" rel="noopener" style="color:#60a5fa;">White-Label &amp; Custom Projects</a> · <a href="mailto:rajmukherjee042@gmail.com" style="color:#34d399;">Free to Talk (All Budgets)</a></span>
   </footer>
 
-  <div class="modal" id="modal" onclick="if(event.target===this) closeModal()">
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onclick="if(event.target===this) closeModal()">
     <div class="modal-box">
       <img id="modal-img" src="" alt="Preview" />
       <div class="modal-foot">
         <strong id="modal-title"></strong>
-        <button class="btn btn-outline" onclick="closeModal()">Close</button>
+        <button class="btn btn-outline" type="button" onclick="closeModal()">Close</button>
       </div>
     </div>
   </div>
@@ -573,11 +626,14 @@
     }
 
     function openModal(src, title) {
-      document.getElementById("modal-img").src = src;
+      const img = document.getElementById("modal-img");
+      img.src = src;
+      img.alt = title;
       document.getElementById("modal-title").textContent = title;
       document.getElementById("modal").classList.add("open");
     }
     function closeModal() { document.getElementById("modal").classList.remove("open"); }
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
 
     let currentCat = "all";
     const grid = document.getElementById("grid");
@@ -586,6 +642,19 @@
     function render() {
       const q = search.value.trim().toLowerCase();
       const filtered = GAMES.filter(g => (currentCat === "all" || g.cat === currentCat) && (!q || g.title.toLowerCase().includes(q) || g.desc.toLowerCase().includes(q) || g.provides.toLowerCase().includes(q)));
+      if (!filtered.length) {
+        grid.innerHTML = `
+          <div class="info-box" style="grid-column:1 / -1;text-align:center;padding:32px 20px;">
+            <h3>No matching games in the catalog</h3>
+            <p style="margin:8px auto 16px;max-width:540px;">Looking for a custom game or mechanic not listed here? Free to talk — we welcome custom projects across all budgets, from small starter builds to enterprise systems.</p>
+            <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+              <a class="btn btn-green" href="https://universeinvedors.tech/white-label" target="_blank" rel="noopener">Explore White-Label &amp; Custom Builds</a>
+              <a class="btn btn-outline" href="mailto:rajmukherjee042@gmail.com?subject=Custom%20Game%20Inquiry">Email rajmukherjee042@gmail.com</a>
+            </div>
+          </div>
+        `;
+        return;
+      }
       grid.innerHTML = filtered.map(g => `
         <article class="card">
           <button class="card-img-btn" type="button" onclick="openModal('assets/covers/${g.cover}', '${g.title.replace(/'/g, "\\'")}')">
@@ -615,8 +684,12 @@
 
     document.getElementById("filters").addEventListener("click", (e) => {
       if (!e.target.matches(".filter-btn")) return;
-      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      document.querySelectorAll(".filter-btn").forEach(b => {
+        b.classList.remove("active");
+        b.setAttribute("aria-pressed", "false");
+      });
       e.target.classList.add("active");
+      e.target.setAttribute("aria-pressed", "true");
       currentCat = e.target.dataset.cat;
       render();
     });
